@@ -64,6 +64,16 @@ The relative path to the directory where the routes are located.
 - PORT {int} - the port to run the server on
 
 
+## Example Server
+
+
+You can run a basic example server with the following commands:
+
+```
+docker-compose build
+docker-compose up
+```
+
 ## Development
 
 

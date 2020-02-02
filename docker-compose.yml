@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+    jsango:
+        build: .
+        image: ewanjones/jsango:latest
+        command: bash -c "npm run example"
+        environment:
+          - NODE_ENV=development
+        working_dir: /app
+        volumes:
+          - .:/app
+        ports:
+          - "9000:9000"
+        depends_on:
+          - db
+
+    db:
+        image: mongo
+        ports:
+          - "27017:27017"
+        volumes:
+          - ./data:/data/db
